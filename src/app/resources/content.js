@@ -8,7 +8,7 @@ const person = {
   },
   role: "Tech Community",
   avatar: "/logo.svg",
-  location: "Asia/Kathmandu",
+  location: "Bhadrapur, Jhapa",
   languages: ["English", "Nepali"],
 };
 
