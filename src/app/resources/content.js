@@ -9,6 +9,7 @@ const person = {
   role: "Tech Community",
   avatar: "/logo.svg",
   location: "Bhadrapur, Jhapa",
+  timeZone: "Asia/Kathmandu",
   languages: ["English", "Nepali"],
 };
 
