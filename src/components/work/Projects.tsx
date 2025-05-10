@@ -1,36 +1,90 @@
-import { getPosts } from "@/app/utils/utils";
-import { Column } from "@/once-ui/components";
-import { ProjectCard } from "@/components";
+import React from "react";
+import { Column, Card, Text, Heading, Flex } from "@/once-ui/components";
 
-interface ProjectsProps {
-  range?: [number, number?];
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  hackathon?: string;
+  team?: string[];
+  image?: string;
 }
 
-export function Projects({ range }: ProjectsProps) {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
+interface ProjectsProps {
+  range?: [number, number];
+  columns?: "1" | "2" | "3";
+}
 
-  const sortedProjects = allProjects.sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
-  });
+const projects: Project[] = [
+  {
+    title: "Smart Campus App",
+    description:
+      "A mobile application to enhance campus life with features like event management, resource sharing, and student networking.",
+    technologies: ["React Native", "Firebase", "Node.js"],
+    hackathon: "Annual Hackathon 2023",
+    team: ["Team Mavericks"],
+  },
+  {
+    title: "AI Learning Assistant",
+    description:
+      "An AI-powered learning platform that helps students with personalized study materials and practice questions.",
+    technologies: ["Python", "TensorFlow", "React"],
+    hackathon: "Tech Fest 2023",
+    team: ["Team Mavericks"],
+  },
+  {
+    title: "Community Portal",
+    description:
+      "A web portal for managing community events, workshops, and knowledge sharing sessions.",
+    technologies: ["Next.js", "TypeScript", "MongoDB"],
+    team: ["Team Mavericks"],
+  },
+];
 
-  const displayedProjects = range
-    ? sortedProjects.slice(range[0] - 1, range[1] ?? sortedProjects.length)
-    : sortedProjects;
+export function Projects({
+  range = [0, projects.length],
+  columns = "1",
+}: ProjectsProps) {
+  const [start, end] = range;
+  const displayedProjects = projects.slice(start - 1, end);
 
   return (
-    <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
-      {displayedProjects.map((post, index) => (
-        <ProjectCard
-          priority={index < 2}
-          key={post.slug}
-          href={`work/${post.slug}`}
-          images={post.metadata.images}
-          title={post.metadata.title}
-          description={post.metadata.summary}
-          content={post.content}
-          avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
-          link={post.metadata.link || ""}
-        />
+    <Column
+      gap="m"
+      style={{
+        display: "grid",
+        gridTemplateColumns: `repeat(${columns}, 1fr)`,
+        gap: "var(--space-m)",
+      }}
+    >
+      {displayedProjects.map((project, index) => (
+        <Card key={index} padding="m">
+          <Column gap="s">
+            <Heading variant="heading-default-m">{project.title}</Heading>
+            <Text variant="body-default-m">{project.description}</Text>
+            <Flex gap="m" vertical="center" wrap>
+              {project.technologies.map((tech, techIndex) => (
+                <Text
+                  key={techIndex}
+                  variant="body-default-s"
+                  onBackground="neutral-weak"
+                >
+                  {tech}
+                </Text>
+              ))}
+            </Flex>
+            {project.hackathon && (
+              <Text variant="body-default-s" onBackground="neutral-weak">
+                Hackathon: {project.hackathon}
+              </Text>
+            )}
+            {project.team && (
+              <Text variant="body-default-s" onBackground="neutral-weak">
+                Team: {project.team.join(", ")}
+              </Text>
+            )}
+          </Column>
+        </Card>
       ))}
     </Column>
   );

@@ -6,39 +6,38 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English"], // optional: Leave the array empty if you don't want to display languages
+  role: "Tech Community",
+  avatar: "/logo.svg",
+  location: "Asia/Kathmandu",
+  languages: ["English", "Nepali"],
 };
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Join Mechi Mavericks Community</>,
   description: (
     <>
-      Get In Touch!
+      Stay updated with our latest events, hackathons, and tech community
+      activities!
     </>
   ),
 };
 
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/mechimavericks",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/",
+    link: "https://www.linkedin.com/company/mechimavericks",
   },
   {
     name: "X",
     icon: "x",
-    link: "",
+    link: "https://twitter.com/mechimavericks",
   },
   {
     name: "Email",
@@ -49,22 +48,22 @@ const social = [
 
 const home = {
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  title: `${person.name} - Tech Community`,
+  description: `Empowering the tech community at Mechi Multiple Campus through events, hackathons, and knowledge sharing`,
   headline: <>Mechi Mavericks</>,
   subline: (
     <>
-      we are Mechi Mavericks a tech community from BCA Mechi Multiple campus
+      Empowering the next generation of tech leaders at Mechi Multiple Campus
       <br />
-      Impowering the next generation of tech leaders
+      Through events, hackathons, and community building
     </>
   ),
 };
 
 const about = {
   label: "About",
-  title: "About us",
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: "About Mechi Mavericks",
+  description: `Learn about our mission to enhance the tech community at Mechi Multiple Campus`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -74,210 +73,110 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/mechimavericks",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Our Mission",
     description: (
       <>
-        Mechi Mavericks intro
+        Mechi Mavericks is a dynamic tech community at Mechi Multiple Campus
+        dedicated to fostering innovation, knowledge sharing, and professional
+        growth. We organize events, participate in hackathons, and create
+        opportunities for students to enhance their technical skills and network
+        with industry professionals.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Our Activities",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Tech Events",
+        timeframe: "2023 - Present",
+        role: "Community Events",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Organizing regular tech workshops, seminars, and networking events
+            for students.
           </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+          <>Hosting industry expert talks and hands-on coding sessions.</>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Hackathons",
+        timeframe: "2023 - Present",
+        role: "Competition Participation",
         achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+          <>Participating in national and international hackathons.</>,
+          <>Organizing campus-level hackathons to promote innovation.</>,
         ],
         images: [],
       },
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Community Impact",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Knowledge Sharing",
+        description: (
+          <>Regular tech workshops and knowledge sharing sessions.</>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Skill Development",
+        description: (
+          <>
+            Hands-on training in various technologies and programming languages.
+          </>
+        ),
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Our Focus Areas",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/mav.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Web Development",
+        description: <>Training in modern web technologies and frameworks.</>,
+        images: [],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Mobile Development",
+        description: <>Mobile app development workshops and projects.</>,
+        images: [],
+      },
+      {
+        title: "AI & Machine Learning",
+        description: <>Introduction to AI and ML concepts and applications.</>,
+        images: [],
       },
     ],
   },
 };
 
 const blog = {
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  label: "Events",
+  title: "Upcoming and Past Events",
+  description: `Stay updated with Mechi Mavericks' latest events and activities`,
 };
 
 const work = {
-  label: "Work",
-  title: "My projects",
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  label: "Projects",
+  title: "Our Projects",
+  description: `Explore the innovative projects and hackathon solutions by Mechi Mavericks`,
 };
 
 const gallery = {
   label: "Gallery",
-  title: "My photo gallery",
-  description: `A photo collection by ${person.name}`,
-  // Images from https://pexels.com
-  images: [
-    {
-      src: "/images/gallery/img-01.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-02.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-03.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-04.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-05.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-07.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-08.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-09.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-10.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-11.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-12.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-13.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-14.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-  ],
+  title: "Event Gallery",
+  description: `Photos from our events, workshops, and hackathons`,
+  images: [],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };

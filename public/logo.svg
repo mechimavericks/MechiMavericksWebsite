@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 301.51 301.51">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        font-family: Tokyo-Regular, Tokyo;
+        font-size: 17.81px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: teal;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-10 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-11 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-3 {
+        opacity: .07;
+      }
+
+      .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-12 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-13 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-14 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-15 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-16 {
+        letter-spacing: .02em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_4" data-name="Layer 4">
+    <path class="cls-3" d="m40.37,209.39L79.16,58.26c.68-2.66,3.73-3.93,6.1-2.54l29.32,17.17c1.41.82,2.2,2.4,2.02,4.02l-9.37,86.32c-.13,1.23-.81,2.33-1.84,3.01,0,0-55.17,36.16-65.02,43.14Z"/>
+    <polygon class="cls-3" points="182.88 159.93 156.04 142.1 129.2 159.93 134.74 71.77 156.04 59.65 177.34 71.77 182.88 159.93"/>
+    <path class="cls-3" d="m271.7,209.39l-38.79-151.13c-.68-2.66-3.73-3.93-6.1-2.54l-29.32,17.17c-1.41.82-2.2,2.4-2.02,4.02l9.37,86.32c.13,1.23.81,2.33,1.84,3.01,0,0,55.17,36.16,65.02,43.14Z"/>
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <path class="cls-4" d="m36.97,204.14L76.9,48.56c.7-2.74,3.84-4.05,6.28-2.62l30.18,17.68c1.45.85,2.26,2.47,2.08,4.14l-9.65,88.86c-.14,1.27-.83,2.4-1.9,3.1,0,0-56.8,37.23-66.93,44.41Z"/>
+    <polygon class="cls-4" points="183.67 150.73 156.04 132.37 128.41 150.73 134.11 59.98 156.04 47.5 177.96 59.98 183.67 150.73"/>
+    <path class="cls-4" d="m275.11,204.14l-39.93-155.57c-.7-2.74-3.84-4.05-6.28-2.62l-30.18,17.68c-1.45.85-2.26,2.47-2.08,4.14l9.65,88.86c.14,1.27.83,2.4,1.9,3.1,0,0,56.8,37.23,66.93,44.41Z"/>
+    <text class="cls-2" transform="translate(87.98 197.46) scale(.98 1)"><tspan class="cls-5" x="0" y="0">M</tspan><tspan class="cls-14" x="16.17" y="0">e</tspan><tspan class="cls-6" x="24.77" y="0">c</tspan><tspan class="cls-16" x="35.27" y="0">h</tspan><tspan class="cls-8" x="45.88" y="0">i </tspan><tspan class="cls-12" x="54.39" y="0">M</tspan><tspan class="cls-10" x="69.96" y="0">a</tspan><tspan class="cls-13" x="81.14" y="0">v</tspan><tspan class="cls-15" x="93.96" y="0">e</tspan><tspan class="cls-7" x="102.34" y="0">r</tspan><tspan class="cls-9" x="113.72" y="0">i</tspan><tspan class="cls-11" x="117.96" y="0">c</tspan><tspan class="cls-1" x="128.3" y="0">k</tspan><tspan x="139.15" y="0">s</tspan></text>
+  </g>
+</svg>

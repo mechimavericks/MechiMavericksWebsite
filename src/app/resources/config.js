@@ -3,8 +3,8 @@ const baseURL = "mechimavericks.tech";
 const routes = {
   "/": true,
   "/about": true,
-  "/work": true,
-  "/blog": true,
+  "/projects": true,
+  "/events": true,
   "/gallery": true,
 };
 
