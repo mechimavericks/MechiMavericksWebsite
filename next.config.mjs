@@ -8,6 +8,9 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  images: {
+    domains: ["i.ibb.co"],
+  },
 };
 
 export default withMDX(nextConfig);

@@ -6,6 +6,7 @@ const routes = {
   "/projects": true,
   "/events": true,
   "/gallery": true,
+  "/teams": true,
 };
 
 // Enable password protection on selected routes

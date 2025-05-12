@@ -35,11 +35,7 @@ const social = [
     icon: "linkedin",
     link: "https://www.linkedin.com/company/mechimavericks",
   },
-  {
-    name: "X",
-    icon: "x",
-    link: "https://twitter.com/mechimavericks",
-  },
+
   {
     name: "Email",
     icon: "email",
@@ -180,4 +176,10 @@ const gallery = {
   images: [],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const teams = {
+  label: "Teams",
+  title: "Our Teams",
+  description: "Meet the passionate tech enthusiasts behind Mechi Mavericks",
+};
+
+export { person, social, newsletter, home, about, blog, work, gallery, teams };

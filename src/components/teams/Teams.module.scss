@@ -1,0 +1,302 @@
+.teamsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  width: 100%;
+  position: relative; // Added for scroll-to-top button positioning
+  margin: 2rem 0;
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  width: 100%;
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 1rem;
+  }
+}
+
+.categoryTitle {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  color: var(--brand-on-background-strong);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  text-align: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-alpha-strong);
+    border-radius: 3px;
+  }
+
+  @media (max-width: 768px) {
+    &::after {
+      width: 40px;
+      height: 3px;
+    }
+  }
+}
+
+// Team card styles
+.team-card {
+  cursor: pointer;
+  background-color: var(--neutral-background-default);
+  overflow: hidden;
+  box-shadow: var(--shadow-m);
+}
+
+.avatarContainer {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: var(--space-s);
+  border: 3px solid var(--accent-alpha-weak);
+
+  img.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.avatarOverlay {
+  display: none;
+  font-size: 0.9rem;
+
+  span {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.35em 0.7em;
+    border-radius: 50px;
+    font-size: 0.85rem;
+  }
+}
+
+.role {
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.memberName {
+  margin-bottom: 0;
+  color: var(--neutral-on-background-strong);
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.socialIcon {
+  color: var(--neutral-on-background-weak);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teamsGrid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  // For Leadership section (first category), make it center-aligned on larger screens
+  .categorySection:first-child & {
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(1, 1fr);
+      max-width: 350px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// Additional responsive styles for small screens
+@media (max-width: 380px) {
+  .teamsGrid {
+    gap: var(--space-xs);
+  }
+}
+
+// Animation classes removed
+.fade-in {
+  opacity: 1;
+}
+
+// Scroll to top button
+.scrollTopButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-l);
+  animation: fadeIn 0.3s ease;
+  padding: 0;
+  min-width: auto;
+  min-height: auto;
+
+  @media (max-width: 768px) {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+// Modal overlay styles
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-m);
+  backdrop-filter: blur(3px);
+  overflow-y: auto;
+}
+
+.modalContent {
+  background-color: var(--neutral-background-default);
+  border-radius: var(--radius-l);
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: var(--space-s);
+  right: var(--space-s);
+  z-index: 10;
+  padding: var(--space-xs);
+  background: var(--neutral-background-strong);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  width: 36px;
+  height: 36px;
+  min-height: auto;
+  min-width: auto;
+
+  &:hover {
+    background: var(--neutral-background-strong-hover);
+  }
+}
+
+.modalInner {
+  padding: var(--space-l);
+}
+
+.modalHeader {
+  display: flex;
+  gap: var(--space-m);
+  align-items: center;
+  margin-bottom: var(--space-m);
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.modalImageWrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent-alpha-weak);
+  flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.modalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modalDescription {
+  margin-bottom: var(--space-l);
+}
+
+.modalSocialLinks {
+  display: flex;
+  gap: var(--space-s);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.modalSocialIcon {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-s);
+  color: var(--neutral-on-background-strong);
+  background-color: var(--neutral-alpha-weak);
+  border-radius: var(--radius-full);
+
+  span {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
+// Modal flex container for responsive layout
+.modalFlexContainer {
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
+// Modal animation removed

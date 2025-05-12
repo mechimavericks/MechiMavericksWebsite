@@ -15,6 +15,7 @@ import {
   blog,
   work,
   gallery,
+  teams,
 } from "@/app/resources/content";
 
 type TimeDisplayProps = {
@@ -90,9 +91,13 @@ export const Header = () => {
               width={40}
               height={40}
               style={{ marginRight: "1rem" }}
-            />
+            />{" "}
           </Flex>
-          {display.location && <Flex hide="s">Mechi Mavriks - MMC</Flex>}
+          {display.location && (
+            <Flex hide="s" style={{ marginBottom: "8px" }}>
+              Mechi Mavriks - MMC
+            </Flex>
+          )}
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex
@@ -145,7 +150,7 @@ export const Header = () => {
                     selected={pathname.startsWith("/projects")}
                   />
                 </>
-              )}
+              )}{" "}
               {routes["/events"] && (
                 <>
                   <ToggleButton
@@ -160,6 +165,23 @@ export const Header = () => {
                     prefixIcon="book"
                     href="/events"
                     selected={pathname.startsWith("/events")}
+                  />
+                </>
+              )}{" "}
+              {routes["/teams"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="person"
+                    href="/teams"
+                    label={teams.label}
+                    selected={pathname.startsWith("/teams")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="person"
+                    href="/teams"
+                    selected={pathname.startsWith("/teams")}
                   />
                 </>
               )}
