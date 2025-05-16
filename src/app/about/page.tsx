@@ -71,7 +71,7 @@ export default function About() {
   return (
     <Column maxWidth="m" gap="xl" horizontal="center">
       <Column fillWidth paddingY="l" gap="m" horizontal="center">
-        <Column maxWidth="s" horizontal="center">
+        <Column maxWidth="s">
           <Heading className={styles.textAlign} variant="display-strong-l">
             {about.title}
           </Heading>

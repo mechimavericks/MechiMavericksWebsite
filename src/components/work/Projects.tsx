@@ -23,6 +23,15 @@ const ProjectCard = ({ project }: { project: Project }) => {
     }
   };
 
+  // Generate project initials for the placeholder
+  const getInitials = (title: string) => {
+    return title
+      .split(" ")
+      .map((word) => word[0])
+      .join("")
+      .substring(0, 3);
+  };
+
   return (
     <Card
       padding="m"
@@ -34,21 +43,37 @@ const ProjectCard = ({ project }: { project: Project }) => {
       className={project.repoUrl ? styles["project-card"] : ""}
     >
       <Column gap="m" style={{ height: "100%" }}>
-        {project.image && (
-          <div className={styles.imageContainer}>
-            <img
-              src={project.image}
-              alt={`${project.title} screenshot`}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-              onError={(e) => {
-                e.currentTarget.src = "/images/projects/placeholder.jpg";
-                e.currentTarget.onerror = null;
-              }}
-            />
+        {project.image ? (
+          project.image.trim() !== "" ? (
+            <div className={styles.imageContainer}>
+              <img
+                src={project.image}
+                alt={`${project.title} screenshot`}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+                onError={(e) => {
+                  e.currentTarget.src = "/images/projects/placeholder.jpg";
+                  e.currentTarget.onerror = null;
+                }}
+              />
+            </div>
+          ) : (
+            <div className={styles.imagePlaceholder}>
+              <div className={styles.placeholderPattern}></div>
+              <div className={styles.placeholderText}>
+                {getInitials(project.title)}
+              </div>
+            </div>
+          )
+        ) : (
+          <div className={styles.imagePlaceholder}>
+            <div className={styles.placeholderPattern}></div>
+            <div className={styles.placeholderText}>
+              {getInitials(project.title)}
+            </div>
           </div>
         )}
         <Column
@@ -136,9 +161,8 @@ const projects: Project[] = [
       "YOLOv8",
       "LangChain",
     ],
-    hackathon: "Agriculture Innovation Hackathon",
     team: ["Mechi Mavericks"],
-    image: "/images/projects/krisiconnect.jpg",
+    image: "",
     repoUrl: "https://github.com/mechimavericks/KrisiConnect",
   },
   {
@@ -147,7 +171,7 @@ const projects: Project[] = [
       "A Python library that converts word representations of numbers to their numerical values, supporting American, Indian, and Nepali numbering systems.",
     technologies: ["Python", "NLP"],
     team: ["Mechi Mavericks"],
-    image: "/images/projects/wordtonumber.jpg",
+    image: "",
     repoUrl: "https://github.com/mechimavericks/WordToNumber",
   },
   {
@@ -156,7 +180,7 @@ const projects: Project[] = [
       "A MomentJS-like package for handling dates in Nepali format, supporting Bikram Sambat (BS) calendar conversion and Nepali date formatting.",
     technologies: ["JavaScript", "NodeJS", "NPM Package"],
     team: ["Mechi Mavericks"],
-    image: "/images/projects/momentnp.jpg",
+    image: "",
     repoUrl: "https://github.com/mechimavericks/moment.np",
   },
   {
@@ -167,6 +191,22 @@ const projects: Project[] = [
     team: ["Mechi Mavericks"],
     image: "/images/projects/Logo_BCA_Association.png",
     repoUrl: "https://github.com/mechimavericks/BCA-Association",
+  },
+  {
+    title: "RoadSensee",
+    description:
+      "A real-time accident detection system that integrates with CCTV cameras using machine learning to detect road accidents and alert authorities immediately.",
+    technologies: [
+      "Next.js",
+      "Python",
+      "YOLOv8",
+      "Flask",
+      "Socket.io",
+      "Machine Learning",
+    ],
+    team: ["Mechi Mavericks"],
+    image: "",
+    repoUrl: "https://github.com/mechimavericks/roadsensee",
   },
 ];
 

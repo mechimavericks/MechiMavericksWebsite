@@ -41,6 +41,11 @@ const social = [
     icon: "email",
     link: "mailto:mechimavericks@gmail.com",
   },
+  {
+    name: "Facebook",
+    icon: "facebook",
+    link: "https://www.facebook.com/mechimavericks",
+  },
 ];
 
 const home = {

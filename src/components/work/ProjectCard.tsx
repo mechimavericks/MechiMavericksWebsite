@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Card, Column, Flex, Heading, Text } from "@/once-ui/components";
+import styles from "./Projects.module.scss";
 
 interface Project {
   title: string;
@@ -39,7 +40,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       }}
     >
       <Column gap="m" style={{ flex: 1, justifyContent: "space-between" }}>
-        {project.image && (
+        {" "}
+        {project.image ? (
           <div
             style={{
               width: "100%",
@@ -61,6 +63,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 objectPosition: "center", // Center the image
               }}
             />
+          </div>
+        ) : (
+          <div className={styles.imagePlaceholder}>
+            <div className={styles.placeholderPattern}></div>
+            <div className={styles.placeholderText}>
+              {project.title
+                .split(" ")
+                .map((word) => word[0])
+                .join("")
+                .substring(0, 3)}
+            </div>
           </div>
         )}
         <Column gap="s" style={{ flex: 1 }}>

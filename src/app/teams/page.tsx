@@ -12,18 +12,15 @@ export default function TeamsPage() {
   const categories = [
     "All",
     "Leadership",
-    "Vice President & Secretaries",
-    "Tech Team",
-    "Graphics & Design",
+    "Co-Lead & Coordinators",
     "Executive Members",
   ];
 
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category === "All" ? null : category);
   };
-
   return (
-    <Column maxWidth="xl" gap="xl" horizontal="center" paddingX="m">
+    <Column maxWidth="xl" gap="m" horizontal="center" paddingX="m">
       <Column fillWidth paddingY="l" gap="s" horizontal="center">
         <Heading
           variant="display-strong-l"
@@ -59,8 +56,7 @@ export default function TeamsPage() {
           }}
         >
           The leadership behind Mechi Mavericks
-        </Text>
-
+        </Text>{" "}
         {/* Responsive filter buttons */}
         <Flex
           horizontal="center"
@@ -73,6 +69,7 @@ export default function TeamsPage() {
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
+            overflowX: "auto",
           }}
         >
           {categories.map((category) => (
@@ -88,8 +85,13 @@ export default function TeamsPage() {
                 margin: "0.25rem",
                 fontSize:
                   category === "Vice President & Secretaries"
-                    ? "clamp(0.7rem, 2vw, 0.85rem)"
-                    : "clamp(0.75rem, 3vw, 0.9rem)",
+                    ? "clamp(0.7rem, 1.5vw, 0.85rem)"
+                    : "clamp(0.75rem, 2.5vw, 0.9rem)",
+                whiteSpace: "nowrap",
+                minHeight: "36px",
+                display: "flex",
+                alignItems: "center",
+                padding: category.length > 10 ? "4px 12px" : "4px 16px",
               }}
             />
           ))}
