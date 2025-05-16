@@ -97,6 +97,14 @@ const teamCategories = [
         },
       },
       {
+        name: "Prjwal Rayamajhi ",
+        role: "Executive Member",
+        image: "https://i.ibb.co/bj2jG0cR/prajwal-r.jpg",
+        socialLinks: {
+          linkedin: "https://www.linkedin.com/in/prajwal-rayamajhi-014905282/",
+        },
+      },
+      {
         name: "Manish Pradhan",
         role: "Executive Member",
         image: "https://i.ibb.co/NgxszPz0/manishpradhan.jpg",
@@ -108,7 +116,9 @@ const teamCategories = [
         name: "Kiran Sitaula",
         role: "Executive Member",
         image: "https://i.ibb.co/8Tbc5ch/kiransitoula.jpg",
-        socialLinks: {},
+        socialLinks: {
+          github: "https://github.com/KiranSitaula10",
+        },
       },
       {
         name: "Rishika Adhikari",
@@ -118,6 +128,16 @@ const teamCategories = [
           email: "rishikaadhikari560@gmail.com",
           linkedin: "https://www.linkedin.com/in/rishika-adhikari-1a92492a9/",
           github: "https://github.com/Rishika984",
+        },
+      },
+      {
+        name: "Prajwal Gautam",
+        role: "Executive Member",
+        image: "https://i.ibb.co/Xr08R7dX/prajwal.jpg",
+        socialLinks: {
+          email: "prajwal.gautam2727@gmail.com",
+          linkedin: "https://www.linkedin.com/in/prajwal-gautam-692037301/",
+          github: "https://github.com/prajwalj1",
         },
       },
     ],
